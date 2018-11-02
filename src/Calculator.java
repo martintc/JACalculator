@@ -89,7 +89,10 @@ public class Calculator implements ActionListener {
             input = "";
             display.setText(input);
         } else if (e.getActionCommand().equals("=")) {
-            // full out later
+            ParseCalculation calculate = new ParseCalculation(input);
+            int total = calculate.run();
+            Integer answer = total;
+            display.setText(answer.toString());
         } else {
             String buttonInput = e.getActionCommand();
             if (buttonInput.equals("+") || buttonInput.equals("-") || buttonInput.equals("/") || buttonInput.equals("*")) {
