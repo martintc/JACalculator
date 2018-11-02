@@ -11,6 +11,10 @@ public class ParseCalculation {
 
     }
 
+    /*
+     * Runs the main part of the program to take the input, check for basic errors of input
+     * and facilitate the calculation.
+     */
     public boolean run () {
         String[] calculation = inputToArray(input);
 
@@ -23,6 +27,10 @@ public class ParseCalculation {
 
     }
 
+    /*
+     * takes the input given by user and plits it up into an array using white space
+     * as the division point.
+     */
     private String[] inputToArray (String pInput) {
         return pInput.split(" ");
     }
@@ -64,6 +72,11 @@ public class ParseCalculation {
         return unwrappedIn;
     }
 
+    /*
+     * Takes the input in array format and checks if two operands are placed next to eachother.
+     * If two operands are placed next to eachother, it will return false causing the JTextField
+     * in the main window to change the text "Error."
+     */
     private boolean checkInputSyntax (String[] pIn) {
         boolean isTrue = true;
         for (int i = 0; i < pIn.length-1; i++) {
@@ -77,6 +90,9 @@ public class ParseCalculation {
         return isTrue;
     }
 
+    /*
+     * returns the answer integer variable
+     */
     public int getAnswer() {
         return answer;
     }
