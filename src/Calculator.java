@@ -47,11 +47,17 @@ public class Calculator implements ActionListener {
 
         JPanel numberGrid = new JPanel();
         numberGrid.setLayout(new GridLayout(4, 3));
-
-        for (int i = 9; i >= 0; i--) {
-            Integer currentNumber = i;
-            addButton(numberGrid, currentNumber.toString());
-        }
+        addButton(numberGrid, "7");
+        addButton(numberGrid, "8");
+        addButton(numberGrid, "9");
+        addButton(numberGrid, "4");
+        addButton(numberGrid, "5");
+        addButton(numberGrid, "6");
+        addButton(numberGrid, "1");
+        addButton(numberGrid, "2");
+        addButton(numberGrid, "3");
+        addButton(numberGrid, "0");
+        
         addButton(numberGrid, ".");
         addButton(numberGrid, "-");
         buttonPanel.add(numberGrid);
@@ -68,7 +74,7 @@ public class Calculator implements ActionListener {
         mainPanel.add(buttonPanel);
         cal.add(mainPanel);
 
-        cal.setSize(300, 400);
+        cal.setSize(300, 300);
         // cal.setDefaultLookAndFeelDecorated(true);
         cal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         cal.setVisible(true);
