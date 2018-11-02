@@ -96,7 +96,7 @@ public class Calculator implements ActionListener {
         } else if (e.getActionCommand().equals("=")) {
             ParseCalculation calculate = new ParseCalculation(input);
             if (calculate.run()) {
-                Integer answer = calculate.getAnswer();
+                Double answer = calculate.getAnswer();
                 display.setText(answer.toString());
             } else {
                 display.setText("Error");
