@@ -1,10 +1,9 @@
-import java.util.ArrayList;
-import java.lang.Integer;
+import java.lang.Double;
 
 public class ParseCalculation {
 
     private String input;
-    private int answer;
+    private Double answer;
 
     public ParseCalculation (String pInput) {
         input = pInput;
@@ -41,8 +40,8 @@ public class ParseCalculation {
      * Goes through an array of Strings. and performs calculations
      *
      */
-    private int parseString (String[] pInput) {
-        int total = parseStringToInt(pInput[0]);
+    private double parseString (String[] pInput) {
+        double total = parseStringToInt(pInput[0]);
         for (int i = 1; i < pInput.length; i++) {
             if (pInput[i].equals("+")) {
                 total = total + parseStringToInt(pInput[i+1]);
@@ -66,9 +65,9 @@ public class ParseCalculation {
      * Then it unboxes the value into a primitive type of int.
      *
      */
-    private int parseStringToInt(String pIn) {
-        Integer in = Integer.parseInt(pIn);
-        int unwrappedIn = in;
+    private double parseStringToInt(String pIn) {
+        Double in = Double.parseDouble(pIn);
+        double unwrappedIn = in;
         return unwrappedIn;
     }
 
@@ -93,7 +92,7 @@ public class ParseCalculation {
     /*
      * returns the answer integer variable
      */
-    public int getAnswer() {
+    public double getAnswer() {
         return answer;
     }
 
