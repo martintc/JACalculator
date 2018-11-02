@@ -9,16 +9,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.Box;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 
 
 public class Calculator implements ActionListener {
 
     private JTextField display;
     private String input = "";
+    private JFrame cal;
 
     public Calculator () {
 
-        JFrame cal = new JFrame("A Calculator");
+        cal = new JFrame("A Calculator");
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
@@ -84,7 +86,10 @@ public class Calculator implements ActionListener {
         if (e.getActionCommand().equals("Exit")) {
             System.exit(-1);
         } else if (e.getActionCommand().equals("About")) {
-            // fill later
+            JOptionPane popUp = new JOptionPane();
+            String message = "JACalculator \n" +
+                    "https://github.com/martintc/JACalculator";
+            popUp.showMessageDialog(cal, message);
         } else if (e.getActionCommand().equals("Clear")) {
             input = "";
             display.setText(input);
