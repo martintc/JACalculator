@@ -4,15 +4,23 @@ import java.lang.Integer;
 public class ParseCalculation {
 
     private String input;
+    private int answer;
 
     public ParseCalculation (String pInput) {
         input = pInput;
 
     }
 
-    public int run () {
+    public boolean run () {
         String[] calculation = inputToArray(input);
-        return parseString(calculation); // change this value after completing class
+
+        if (checkInputSyntax(calculation)) {
+            answer = parseString(calculation); // change this value after completing class
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     private String[] inputToArray (String pInput) {
@@ -54,6 +62,23 @@ public class ParseCalculation {
         Integer in = Integer.parseInt(pIn);
         int unwrappedIn = in;
         return unwrappedIn;
+    }
+
+    private boolean checkInputSyntax (String[] pIn) {
+        boolean isTrue = true;
+        for (int i = 0; i < pIn.length-1; i++) {
+            if ((pIn[i].equals("+") || pIn[i].equals("-") || pIn[i].equals("*") || pIn[i].equals("/")) && (pIn[i].equals("+") || pIn[i].equals("-") || pIn[i].equals("*"))) {
+                isTrue = true;
+            } else {
+                isTrue = false;
+            }
+
+        }
+        return isTrue;
+    }
+
+    public int getAnswer() {
+        return answer;
     }
 
 }
