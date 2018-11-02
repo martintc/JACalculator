@@ -3,7 +3,7 @@ import java.lang.Double;
 public class ParseCalculation {
 
     private String input;
-    private Double answer;
+    private double answer;
 
     public ParseCalculation (String pInput) {
         input = pInput;
